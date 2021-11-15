@@ -13,9 +13,22 @@ public class Character {
     private int maxStr;
     private int minStr;
     private int def;
-    private List<Magic> Spells;
+    private List<Magic> spells;
     private List<Items> items;
     private List<String> actions = new ArrayList<String>(Arrays.asList("Attack", "Magic", "Items"));
     private String name;
 
+    public Character(int hp, int mp, int str, int def, String name, List<Magic> spells, List<Items> items) {
+        this.hp = hp;
+        this.maxHp = maxHp;
+        this.mp = mp;
+        this.maxMp = maxMp;
+        this.str = str;
+        this.maxStr = maxStr;
+        this.minStr = minStr;
+        this.def = def;
+        this.spells = spells;
+        this.items = items;
+        this.name = name;
+    }
 }
