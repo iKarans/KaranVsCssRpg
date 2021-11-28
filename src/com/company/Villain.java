@@ -5,14 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Hero extends Character {
-
+public class Villain extends Character {
     private List<Magic> spells;
     private List<Item> items;
-    private List<String> actions = new ArrayList<String>(Arrays.asList("Attack", "Magic", "Items"));
+    private List<String> actions = new ArrayList<String>(Arrays.asList("Attack", "Magic"));
     private List<Character> enemies;
 
-    public Hero(int hp, int mp, int str, int def, String name, List<Magic> spells, List<Item> items) {
+    public Villain(int hp, int mp, int str, int def, String name, List<Magic> spells, List<Item> items) {
         super(hp, mp, str, def, name);
         this.spells = spells;
         this.items = items;
@@ -40,17 +39,6 @@ public class Hero extends Character {
         return choice;
     }
 
-    public int chooseItem() {
-        System.out.println("\n" + this.getName() + ", please choose an item");
-        System.out.println("Items:");
-        for (int i = 0; i < this.getItems().size(); i++) {
-            System.out.println(Integer.toString(i + 1) + ") " + items.get(i).getName());
-        }
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        return choice;
-    }
-
     public int chooseTarget() {
         System.out.println("\n" + this.getName() + ", please choose an enemy");
         System.out.println("Enemies:");
@@ -62,20 +50,20 @@ public class Hero extends Character {
         return choice;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
     public List<Magic> getSpells() {
         return spells;
     }
 
     public void setSpells(List<Magic> spells) {
         this.spells = spells;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public List<Character> getEnemies() {

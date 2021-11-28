@@ -31,5 +31,6 @@ public class Main {
 
 
         Hero hero = new Hero( 3260, 132, 300, 34, "Karan", heroSpells, heroItems);
+        hero.printHpMpStatus();
     }
 }

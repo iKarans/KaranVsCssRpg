@@ -1,9 +1,7 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Character {
     private int hp;
@@ -14,19 +12,17 @@ public class Character {
     private int maxStr;
     private int minStr;
     private int def;
-    private List<Magic> spells;
     private String name;
 
-    public Character(int hp, int mp, int str, int def, String name, List<Magic> spells) {
+    public Character(int hp, int mp, int str, int def, String name) {
         this.hp = hp;
-        this.maxHp = maxHp;
+        this.maxHp = hp;
         this.mp = mp;
-        this.maxMp = maxMp;
+        this.maxMp = mp;
         this.str = str;
-        this.maxStr = maxStr;
-        this.minStr = minStr;
+        this.maxStr = str + 10;
+        this.minStr = str - 10;
         this.def = def;
-        this.spells = spells;
         this.name = name;
     }
 
@@ -131,14 +127,6 @@ public class Character {
 
     public void setDef(int def) {
         this.def = def;
-    }
-
-    public List<Magic> getSpells() {
-        return spells;
-    }
-
-    public void setSpells(List<Magic> spells) {
-        this.spells = spells;
     }
 
     public String getName() {
