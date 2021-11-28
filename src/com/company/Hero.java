@@ -10,7 +10,7 @@ public class Hero extends Character {
     private List<Magic> spells;
     private List<Item> items;
     private List<String> actions = new ArrayList<String>(Arrays.asList("Attack", "Magic", "Items"));
-    private List<Character> enemies;
+    private List<Villain> enemies;
 
     public Hero(int hp, int mp, int str, int def, String name, List<Magic> spells, List<Item> items) {
         super(hp, mp, str, def, name);
@@ -78,11 +78,11 @@ public class Hero extends Character {
         this.spells = spells;
     }
 
-    public List<Character> getEnemies() {
+    public List<Villain> getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(List<Character> enemies) {
+    public void setEnemies(List<Villain> enemies) {
         this.enemies = enemies;
     }
 }

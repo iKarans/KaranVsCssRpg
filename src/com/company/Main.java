@@ -30,7 +30,40 @@ public class Main {
         List<Magic> enemySpells = new ArrayList<Magic>(Arrays.asList(fire, meteor, curaga));
 
 
-        Hero hero = new Hero( 3260, 132, 300, 34, "Karan", heroSpells, heroItems);
-        hero.printHpMpStatus();
+        Hero karan = new Hero( 3260, 132, 300, 34, "Karan", heroSpells, heroItems);
+        Villain css = new Villain(18200, 701, 525, 25, "Css", enemySpells);
+
+        List<Hero> heroes = new ArrayList<Hero>(Arrays.asList(karan));
+        List<Villain> villains = new ArrayList<Villain>(Arrays.asList(css));
+
+        karan.setEnemies(villains);
+        css.setEnemies(heroes);
+
+        boolean playing = true;
+        while(playing) {
+            System.out.println("Current Stats");
+            for(int i = 0; i < heroes.size(); i++) {
+                heroes.get(i).printInfo();
+            }
+            for(int i = 0; i < villains.size(); i++) {
+                villains.get(i).printInfo();
+            }
+            for(int i = 0; i < heroes.size(); i++) {
+                Hero hero = heroes.get(i);
+                int choice = hero.chooseAction();
+                if(choice == 1) {
+                    int dmg = hero.generateDamage();
+                    int enemyChoice = hero.chooseTarget() - 1
+                    Villain target = hero.getEnemies().get(enemyChoice);
+                    target.takeDamage(dmg);
+                    System.out.println(hero.getName() + " attacked " + target.getName() + " for " + dmg + " of damage!");
+                    if(target.getHp() == 0) {
+                        System.out.println(target.getName() + " has died!");
+                        hero.getEnemies().remove(enemyChoice);
+                    }
+                }
+            }
+            break;
+        }
     }
 }

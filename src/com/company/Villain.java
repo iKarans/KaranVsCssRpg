@@ -7,14 +7,12 @@ import java.util.Scanner;
 
 public class Villain extends Character {
     private List<Magic> spells;
-    private List<Item> items;
     private List<String> actions = new ArrayList<String>(Arrays.asList("Attack", "Magic"));
-    private List<Character> enemies;
+    private List<Hero> enemies;
 
-    public Villain(int hp, int mp, int str, int def, String name, List<Magic> spells, List<Item> items) {
+    public Villain(int hp, int mp, int str, int def, String name, List<Magic> spells) {
         super(hp, mp, str, def, name);
         this.spells = spells;
-        this.items = items;
     }
 
     public int chooseAction() {
@@ -58,19 +56,11 @@ public class Villain extends Character {
         this.spells = spells;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    public List<Character> getEnemies() {
+    public List<Hero> getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(List<Character> enemies) {
+    public void setEnemies(List<Hero> enemies) {
         this.enemies = enemies;
     }
 }

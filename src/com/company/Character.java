@@ -27,7 +27,7 @@ public class Character {
     }
 
     public int generateDamage() {
-        return (int) Math.random() * this.maxStr + this.minStr;
+        return (int) Math.random() * (this.maxStr - this.minStr) + this.minStr;
     }
 
     public int takeDamage(int dmg) {
@@ -60,6 +60,10 @@ public class Character {
         System.out.println(hpBar);
         System.out.println(Integer.toString(this.mp) + " / " + Integer.toString(this.maxMp));
         System.out.println(mpBar);
+    }
+
+    public void printInfo() {
+        System.out.println(this.getName() + "          " + this.getHp() + "          " + this.getMp());
     }
 
     // Getters and Setters
