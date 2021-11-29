@@ -13,6 +13,10 @@ public class Magic {
         this.type = type;
     }
 
+    public int generateEffect() {
+        return (int) (Math.random() * (15)) + this.dmg - 15;
+    }
+
     public String getName() {
         return name;
     }

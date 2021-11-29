@@ -53,7 +53,7 @@ public class Main {
                 int choice = hero.chooseAction();
                 if(choice == 1) {
                     int dmg = hero.generateDamage();
-                    int enemyChoice = hero.chooseTarget() - 1
+                    int enemyChoice = hero.chooseTarget() - 1;
                     Villain target = hero.getEnemies().get(enemyChoice);
                     target.takeDamage(dmg);
                     System.out.println(hero.getName() + " attacked " + target.getName() + " for " + dmg + " of damage!");
@@ -61,6 +61,28 @@ public class Main {
                         System.out.println(target.getName() + " has died!");
                         hero.getEnemies().remove(enemyChoice);
                     }
+                } else if(choice == 2) {
+                    int magicChoice = hero.chooseMagic() - 1;
+                    Magic currentMagic = hero.getSpells().get(magicChoice);
+                    if(currentMagic.getCost() > hero.getMp()) {
+                        System.out.println("You do not have enough MP!");
+                        continue;
+                    }
+                    int dmg = currentMagic.generateEffect();
+                    if(currentMagic.getType() == "white") {
+                        hero.heal(dmg);
+                    } else {
+                        int enemyChoice = hero.chooseTarget() - 1;
+                        Villain target = hero.getEnemies().get(enemyChoice);
+                        target.takeDamage(dmg);
+                        System.out.println(hero.getName() + " attacked " + target.getName() + " for " + dmg + " of damage!");
+                        if (target.getHp() == 0) {
+                            System.out.println(target.getName() + " has died!");
+                            hero.getEnemies().remove(enemyChoice);
+                        }
+                    }
+                } else {
+
                 }
             }
             break;
