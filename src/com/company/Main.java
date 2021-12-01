@@ -82,7 +82,35 @@ public class Main {
                         }
                     }
                 } else {
-
+                    int itemChoice = hero.chooseItem() - 1;
+                    Item currentItem = hero.getItems().get(itemChoice);
+                    if(currentItem.getQuantity() == 0) {
+                        System.out.println("You do not have enough quantity");
+                        continue;
+                    }
+                    currentItem.setQuantity(currentItem.getQuantity() - 1);
+                    if(currentItem.getType() == "potion") {
+                        hero.heal(currentItem.getProp());
+                    } else if(currentItem.getType() == "elixer") {
+                        if(currentItem.getName() == "MegaElixer") {
+                            for(int j = 0; j < heroes.size(); j++) {
+                                heroes.get(j).setHp(heroes.get(i).getMaxHp());
+                                heroes.get(j).setMp(heroes.get(i).getMaxMp());
+                            }
+                        } else {
+                            hero.setHp(heroes.get(i).getMaxHp());
+                            hero.setMp(heroes.get(i).getMaxMp());
+                        }
+                    } else if(currentItem.getType() == "attack") {
+                        int enemyChoice = hero.chooseTarget() - 1;
+                        Villain target = hero.getEnemies().get(enemyChoice);
+                        target.takeDamage(currentItem.getProp());
+                        System.out.println(hero.getName() + " attacked " + target.getName() + " for " + currentItem.getProp() + " of damage!");
+                        if (target.getHp() == 0) {
+                            System.out.println(target.getName() + " has died!");
+                            hero.getEnemies().remove(enemyChoice);
+                        }
+                    }
                 }
             }
             break;
