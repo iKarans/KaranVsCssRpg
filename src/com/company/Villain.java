@@ -52,10 +52,6 @@ public class Villain extends Character {
         return spells;
     }
 
-    public void setSpells(List<Magic> spells) {
-        this.spells = spells;
-    }
-
     public List<Hero> getEnemies() {
         return enemies;
     }

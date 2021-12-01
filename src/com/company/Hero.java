@@ -66,16 +66,8 @@ public class Hero extends Character {
         return items;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
     public List<Magic> getSpells() {
         return spells;
-    }
-
-    public void setSpells(List<Magic> spells) {
-        this.spells = spells;
     }
 
     public List<Villain> getEnemies() {

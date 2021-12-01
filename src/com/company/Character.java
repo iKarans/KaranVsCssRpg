@@ -81,10 +81,6 @@ public class Character {
         return maxHp;
     }
 
-    public void setMaxHp(int maxHp) {
-        this.maxHp = maxHp;
-    }
-
     public int getMp() {
         return mp;
     }
@@ -97,47 +93,24 @@ public class Character {
         return maxMp;
     }
 
-    public void setMaxMp(int maxMp) {
-        this.maxMp = maxMp;
-    }
-
     public int getStr() {
         return str;
-    }
-
-    public void setStr(int str) {
-        this.str = str;
     }
 
     public int getMaxStr() {
         return maxStr;
     }
 
-    public void setMaxStr(int maxStr) {
-        this.maxStr = maxStr;
-    }
-
     public int getMinStr() {
         return minStr;
-    }
-
-    public void setMinStr(int minStr) {
-        this.minStr = minStr;
     }
 
     public int getDef() {
         return def;
     }
 
-    public void setDef(int def) {
-        this.def = def;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

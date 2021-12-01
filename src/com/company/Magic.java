@@ -21,31 +21,16 @@ public class Magic {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getCost() {
         return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
     }
 
     public int getDmg() {
         return dmg;
     }
 
-    public void setDmg(int dmg) {
-        this.dmg = dmg;
-    }
-
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 }
