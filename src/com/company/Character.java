@@ -32,7 +32,7 @@ public class Character {
 
     public int takeDamage(int dmg) {
         this.hp -= dmg;
-        if (this.hp < 0) return 0;
+        if (this.hp < 0) this.hp = 0;
         return this.hp;
     }
 

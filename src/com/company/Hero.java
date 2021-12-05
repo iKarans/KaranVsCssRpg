@@ -33,7 +33,7 @@ public class Hero extends Character {
         System.out.println("\n" + this.getName() + ", please choose a spell");
         System.out.println("Spells:");
         for (int i = 0; i < this.getSpells().size(); i++) {
-            System.out.println(Integer.toString(i + 1) + ") " + this.getSpells().get(i).getName());
+            System.out.println(Integer.toString(i + 1) + ") " + this.getSpells().get(i).getName() + " : " + this.getSpells().get(i).getCost() + " " + this.getSpells().get(i).getDmg());
         }
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
@@ -44,7 +44,7 @@ public class Hero extends Character {
         System.out.println("\n" + this.getName() + ", please choose an item");
         System.out.println("Items:");
         for (int i = 0; i < this.getItems().size(); i++) {
-            System.out.println(Integer.toString(i + 1) + ") " + items.get(i).getName());
+            System.out.println(Integer.toString(i + 1) + ") " + this.items.get(i).getName() + " : " + this.items.get(i).getDescription());
         }
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();

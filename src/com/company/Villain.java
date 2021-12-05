@@ -59,4 +59,8 @@ public class Villain extends Character {
     public void setEnemies(List<Hero> enemies) {
         this.enemies = enemies;
     }
+
+    public List<String> getActions() {
+        return actions;
+    }
 }
